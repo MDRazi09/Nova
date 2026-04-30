@@ -1,21 +1,21 @@
-# JARVIS
+# Nova
 
 **Just A Rather Very Intelligent System.**
 
 A voice-first AI assistant that runs on your Mac. Talk to it, and it talks back -- with a British accent, dry wit, and an audio-reactive particle orb straight out of the MCU.
 
-JARVIS connects to your Apple Calendar, Mail, and Notes. It can browse the web, spawn Claude Code sessions to build entire projects, and plan your day -- all through natural voice conversation.
+Nova connects to your Apple Calendar, Mail, and Notes. It can browse the web, spawn Claude Code sessions to build entire projects, and plan your day -- all through natural voice conversation.
 
 > "Will do, sir."
 
 <!-- TODO: Add demo GIF or screenshot here -->
-<!-- ![JARVIS Demo](docs/demo.gif) -->
+<!-- ![Nova Demo](docs/demo.gif) -->
 
 ---
 
 ## What It Does
 
-- **Voice conversation** -- speak naturally, get spoken responses with a JARVIS voice
+- **Voice conversation** -- speak naturally, get spoken responses with a Nova voice
 - **Builds software** -- say "build me a landing page" and watch Claude Code do the work
 - **Reads your calendar** -- "What's on my schedule today?"
 - **Reads your email** -- "Any unread messages?" (read-only, by design)
@@ -25,7 +25,7 @@ JARVIS connects to your Apple Calendar, Mail, and Notes. It can browse the web, 
 - **Remembers things** -- "I prefer React over Vue" (it remembers next time)
 - **Plans your day** -- combines calendar, tasks, and priorities into a plan
 - **Sees your screen** -- knows what apps are open for context-aware responses
-- **Audio-reactive orb** -- a Three.js particle visualization that pulses with JARVIS's voice
+- **Audio-reactive orb** -- a Three.js particle visualization that pulses with Nova's voice
 
 ## Requirements
 
@@ -43,7 +43,7 @@ The fastest way to get running:
 
 ```bash
 git clone https://github.com/yourusername/jarvis.git
-cd jarvis
+cd Nova
 claude
 ```
 
@@ -54,7 +54,7 @@ Claude Code will read the project's `CLAUDE.md` and walk you through setup step 
 ```bash
 # 1. Clone the repo
 git clone https://github.com/yourusername/jarvis.git
-cd jarvis
+cd Nova
 
 # 2. Set up environment
 cp .env.example .env
@@ -79,7 +79,7 @@ cd frontend && npm run dev
 open http://localhost:5173
 ```
 
-Click the page once to enable audio, then speak. JARVIS will respond.
+Click the page once to enable audio, then speak. Nova will respond.
 
 ## Configuration
 
@@ -127,7 +127,7 @@ Microphone -> Web Speech API -> WebSocket -> FastAPI -> Claude (Haiku) -> Fish A
 1. You speak into your microphone
 2. Chrome's Web Speech API transcribes your speech in real-time
 3. The transcript is sent to the server via WebSocket
-4. JARVIS detects intent -- conversation, action, or build request
+4. Nova detects intent -- conversation, action, or build request
 5. For actions: spawns a Claude Code subprocess or runs AppleScript
 6. Generates a response via Claude Haiku (optimized for speed)
 7. Fish Audio converts the response to speech with the JARVIS voice
@@ -164,7 +164,7 @@ JARVIS uses action tags to trigger real system actions:
 - `[ACTION:REMEMBER]` -- stores a fact for future context
 
 ### Memory System
-JARVIS remembers things you tell it using SQLite with FTS5 full-text search. Preferences, decisions, and facts persist across sessions.
+Nova remembers things you tell it using SQLite with FTS5 full-text search. Preferences, decisions, and facts persist across sessions.
 
 ### Calendar & Mail
 All macOS integrations use AppleScript -- no OAuth flows, no token management. Just native system access. Mail is intentionally read-only for safety.
